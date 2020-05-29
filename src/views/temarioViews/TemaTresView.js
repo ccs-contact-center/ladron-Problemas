@@ -12,54 +12,46 @@ class TemaTresView extends Component {
     return (
       <div className="animated fadeIn ">
         <CardHeader className="text-left">
-          <h3>Empatía y Cortesía</h3>
+          <h3>El Ladrón de Problemas</h3>
         </CardHeader>
         <CardBody className="">
           <Row className="">
             <Col xs="12" className="animated zoomInUp delay-1s">
-              <h2>Pero ... ¿De dónde viene y cómo se genera la empatía?</h2>
+              <h2>¿Quién es el culpable?</h2>
             </Col>
             <Col md="12" className="mt-4 animated zoomInUp delay-2s">
               <p>
-                ¿La empatia es solo una actitud o es también una reacción
-                fisiológica de nuestro cuerpo? ¿Tú que crees? ¿Alguna vez ha
-                escuchado hablar de las neuronas espejo? Veamos el siguiente
-                video.
+                Según los problemas urgentes que tienes a la mano, ¿
+                <b className="text-danger">
+                  estos fueron causados por la persona que los sufre
+                </b>
+                ? o ¿
+                <b className="text-warning">sucedieron por causas externas</b>?
+                una vez más, realiza la separación.
               </p>
             </Col>
-            <Col md="12" className="centrado-fila animated zoomInUp delay-3s">
-              <div className=" centrado-fila">
-                <ReactPlayer
-                  url="https://www.youtube.com/watch?v=o4PHuVCzeGY&feature=emb_logo"
-                  controls={true}
-                />
-              </div>
-            </Col>
-            <Col md="12" className="mt-4 animated zoomInUp delay-3s">
-              <p>
-                {' '}
-                Empatizar con alguien es simplemente lograr que esa persona se
-                sienta comprendida. Si lo consigues, serás capaz de cambiar el
-                rumbo de una relación en un instante. El efecto de las neuronas
-                espejo provoca que su interlocutor se sienta se sienta en la
-                deuda con usted y se pueda entenderlo también se refleje sus
-                emociones o los dices que los entiendes lo que se siente, por lo
-                que, para los efectos de las relaciones personales con una
-                conexión emocional con su cliente y el estará dispuesto a
-                cooperar contigo en todo lo que te solicite facilitando asi tu
-                trabajo.
-              </p>
-            </Col>
+
             <Col
               md="12"
-              className="mt-4 animated zoomInUp delay-4s centrado-fila"
+              className="mt-4  animated zoomInUp delay-3s"
             >
-              <img
-                src={tres}
-                style={{ width: 360 }}
-                alt="tres"
-                className="img-fluid   animated  fadeInDown  delay-1s"
-              />
+              <Row className="centrado-fila">
+                <Col xs="6">
+                  <p>
+                    ¿<b>Sabías qué</b>? Si una persona piensa que otra persona
+                    se han buscado sus propios problemas, es menos probable que
+                    decida ayudarle.{' '}
+                  </p>
+                </Col>
+                <Col xs="6">
+                  <img
+                    src={tres}
+                    style={{ width: 360 }}
+                    alt="tres"
+                    className="img-fluid   animated  fadeInDown  delay-1s"
+                  />
+                </Col>
+              </Row>
             </Col>
           </Row>
         </CardBody>
