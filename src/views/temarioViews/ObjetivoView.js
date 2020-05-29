@@ -35,6 +35,7 @@ class ObjetivoView extends Component {
               xs="12"
               className="centrado-fila mt-4 animated  fadeInDown  delay-2s"
             >
+             <p>¿Quien es este ladrón de problemas y donde esta?  ¿Cuál es su misión ?  </p>
              
             </Col>
             <Col xs="12" sm="12" className="mt-4 text-center">
