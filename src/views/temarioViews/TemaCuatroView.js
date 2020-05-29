@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
-import { CardBody, CardHeader, Col, Row } from 'reactstrap'
-
+import {
+  CardBody,
+  CardHeader,
+  Col,
+  Row,
+  TabContent,
+  TabPane,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap'
+import classnames from 'classnames'
 import consejos01 from '../../assets/img/ImgClientesDificiles/consejos01.jpg'
 
 class TemaCuatroView extends Component {
@@ -8,54 +18,132 @@ class TemaCuatroView extends Component {
     <div className="animated fadeIn pt-1 text-center">Cargando...</div>
   )
 
+  state = {
+    activeTab: '0',
+  }
+
+  toggle = (tab) => {
+    if (this.state.activeTab !== tab) this.setState({ activeTab: tab })
+  }
+
   render() {
     return (
       <div className="animated fadeIn ">
         <CardHeader className="text-left">
-          <h3>Clientes Difíciles </h3>
+          <h3>El Ladrón de Problemas</h3>
         </CardHeader>
         <CardBody className="">
           <Row>
             <Col xs="12">
               <h2 className="animated fadeInDown">
-                <b>Cliente amistoso:</b>
+                <b>¿Puedo Ayudar?</b>
               </h2>
             </Col>
             <Col xs="12" className="  animated fadeInDown">
               <Row>
                 <Col xs="8">
-                  <div>
-                    <p style={{ marginBottom: '0px' }}>
-                      <b>Características:</b>
-                    </p>
-                    <p className="text-justify">
-                      Tienden a mostrarse receptivo y pacífico. Al conversar con
-                      él nos da la razón con frecuencia. Tiende a mostrar cierta
-                      indecisión a la hora de realizar la compra.
-                    </p>
-                  </div>
-                  <div>
-                    <p style={{ marginBottom: '0px' }}>
-                      <b>Manera de atenderle:</b>
-                    </p>
-                    <p className="text-justify">
-                      Si la decisión se alarga mucho, realizar un resumen de los
-                      aspectos sobre los cuales hay acuerdo. Se debe hacer
-                      hincapié sobre una oferta concreta, y forzar el acuerdo
-                      cuando se perciben señales de que es posible.
-                    </p>
-                  </div>
-                  <div>
-                    <p style={{ marginBottom: '0px' }}>
-                      <b>Errores a evitar:</b>
-                    </p>
-                    <p className="text-justify">
-                      No debemos confiarnos demasiado, ya que si se tarda
-                      demasiado en cerrar la compra pueden que decidan no
-                      realizarla en ese momento debido a su tendencia a la
-                      indecisión.
-                    </p>
-                  </div>
+                  <Row>
+                    <Col xs="12">
+                      <p>
+                        {' '}
+                        Hasta este momento toda ha sido fácil ¿cierto?, pero es
+                        aquí donde se necesita un poco más de análisis.
+                      </p>
+                      <p>Existen dos caminos en este punto:</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs="12" className="centrado-fila">
+                      <Nav tabs className="text-center">
+                        <NavItem className="d-flex justify-content-center">
+                          <NavLink
+                            className={
+                              (classnames({
+                                active: this.state.activeTab === '1',
+                              }),
+                              'bg-fondo-btn btn btnAct text-danger ')
+                            }
+                            onClick={() => {
+                              this.toggle('1')
+                            }}
+                          >
+                            <div className=" text-center ">
+                              <b>1</b>
+                            </div>
+                          </NavLink>
+                        </NavItem>
+
+                        <NavItem>
+                          <NavLink
+                            className={
+                              (classnames({
+                                active: this.state.activeTab === '2',
+                              }),
+                              'bg-fondo-btn btn btnAct text-danger ')
+                            }
+                            onClick={() => {
+                              this.toggle('2')
+                            }}
+                          >
+                            <div color="primary" className="dark text-center">
+                              <b>2</b>
+                            </div>
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink
+                            className={
+                              (classnames({
+                                active: this.state.activeTab === '3',
+                              }),
+                              'bg-fondo-btn btn btnAct text-danger ')
+                            }
+                            onClick={() => {
+                              this.toggle('3')
+                            }}
+                          >
+                            <div color="primary" className="dark text-center">
+                              <b>2.1</b>
+                            </div>
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
+                    </Col>
+                    <Col xs="12">
+                      <TabContent activeTab={this.state.activeTab}>
+                        <TabPane tabId="0"></TabPane>
+                        <TabPane tabId="1">
+                          <Row>
+                            <Col sm="xs">
+                              <p className="text-danger">
+                                No soy responsable de ayudar ( no es mi rol, que
+                                lo ayude alguien más).
+                              </p>
+                            </Col>
+                          </Row>
+                        </TabPane>
+                        <TabPane tabId="2">
+                          <Row>
+                            <Col sm="12">
+                              <p className="text-warning">
+                                Es mi responsabilidad ayudar ( es mi rol).
+                              </p>
+                            </Col>
+                          </Row>
+                        </TabPane>
+                        <TabPane tabId="3">
+                          <Row>
+                            <Col sm="12">
+                              <p className="text-warning">
+                                Soy corresponsable ( no es mi rol, pero se como
+                                y puedo hacerlo).{' '}
+                              </p>
+                            </Col>
+                          </Row>
+                        </TabPane>
+                      </TabContent>
+                    </Col>
+                  </Row>
                 </Col>
                 <Col xs="4" className="centrado-fila">
                   <img
@@ -64,6 +152,9 @@ class TemaCuatroView extends Component {
                     alt="escucha-activa.jpg"
                     className="img-fluid bordeImagen  animated fadeInUpBig delay-2s  "
                   />
+                </Col>
+                <Col xs="12">
+                  <p>Por lo tanto nuevamente realiza una división de esas problemas</p>
                 </Col>
               </Row>
             </Col>
