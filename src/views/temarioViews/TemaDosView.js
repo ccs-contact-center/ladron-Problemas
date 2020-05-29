@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { CardBody, Col, Row, CardHeader } from 'reactstrap'
-import ReactPlayer from 'react-player'
-import dos from '../../assets/img/ImgEmpatia/dos.png'
+import urgente from '../../assets/img/ImgLadron/urgente.PNG'
+import noUrgente from '../../assets/img/ImgLadron/noUrgente.PNG'
 
 class TemaDosView extends Component {
   loading = () => (
@@ -12,46 +12,49 @@ class TemaDosView extends Component {
     return (
       <div className="animated fadeIn ">
         <CardHeader className="text-left">
-          <h3>Empatía y Cortesía</h3>
+          <h3>El Ladrón de Problemas</h3>
         </CardHeader>
         <CardBody className="">
           <Row className="">
             <Col xs="12" className="animated zoomInUp delay-1s">
-              <h2>¿Por qué es importante la empatía?</h2>
+              <h2>Priorizando Problemas</h2>
             </Col>
             <Col md="12" className="centrado-fila animated zoomInUp delay-2s">
-              <div className=" centrado-fila">
-                <ReactPlayer
-                  url="https://www.youtube.com/watch?v=nYTrIcn4rjg"
-                  controls={true}
-                />
-              </div>
-            </Col>
-            <Col md="12" className="mt-4 animated zoomInUp delay-3s">
               <p>
-                {' '}
-                Empatizar con alguien es simplemente lograr que esa persona se
-                sienta comprendida. Si lo consigues, serás capaz de cambiar el
-                rumbo de una relación en un instante. El efecto de las neuronas
-                espejo provoca que su interlocutor se sienta se sienta en la
-                deuda con usted y se pueda entenderlo también se refleje sus
-                emociones o los dices que los entiendes lo que se siente, por lo
-                que, para los efectos de las relaciones personales con una
-                conexión emocional con su cliente y el estará dispuesto a
-                cooperar contigo en todo lo que te solicite facilitando asi tu
-                trabajo.
+                Una vez que tengas tu listado, vamos a priorizar los problemas,
+                hay que realizar la división de tu lista como{' '}
+                <b className="text-danger">urgente</b> y{' '}
+                <b className="text-warning">no urgente</b>.
               </p>
+            </Col>
+            <Col
+              md="12"
+              className="mt-4 centrado-fila animated  zoomInUp delay-3s"
+            >
+              <img
+                src={urgente}
+                style={{ width: 200 }}
+                alt="Urgente"
+                className="img-fluid   animated  fadeInDown  delay-1s"
+              />
+
+              <div></div>
+
+              <img
+                src={noUrgente}
+                style={{ width: 200 }}
+                alt="noUrgente"
+                className="img-fluid   animated  fadeInDown  delay-1s"
+              />
             </Col>
             <Col
               md="12"
               className="mt-4 animated zoomInUp delay-4s centrado-fila"
             >
-              <img
-                src={dos}
-                style={{ width: 360 }}
-                alt="dos"
-                className="img-fluid   animated  fadeInDown  delay-1s"
-              />
+              <p>
+                Una vez que tengas lista tu separación, por el momento{' '}
+                <b>guarda los problemas no urgentes</b>.{' '}
+              </p>
             </Col>
           </Row>
         </CardBody>
