@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { CardBody, CardHeader, Col, Row } from 'reactstrap'
-import contenido from '../../assets/img/ImgEtiquetaTelefonica/contenido.jpg'
 
 class PresentacionView extends Component {
   loading = () => (
