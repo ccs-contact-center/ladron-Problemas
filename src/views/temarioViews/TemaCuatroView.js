@@ -11,7 +11,7 @@ import {
   NavLink,
 } from 'reactstrap'
 import classnames from 'classnames'
-import consejos01 from '../../assets/img/ImgLadron/cuatro.png'
+import consejos01 from '../../assets/img/ImgLadron/cuatro.PNG'
 
 class TemaCuatroView extends Component {
   loading = () => (
