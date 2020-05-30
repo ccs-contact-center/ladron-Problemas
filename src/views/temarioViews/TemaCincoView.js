@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { CardBody, CardHeader, Col, Row } from 'reactstrap'
-import ReactPlayer from 'react-player'
 import cinco from '../../assets/img/ImgEmpatia/cinco.jpg'
 import { Card, Button } from 'react-bootstrap'
 
@@ -15,131 +14,49 @@ class TemaCincoView extends Component {
     return (
       <div className="animated fadeIn ">
         <CardHeader className="text-left">
-          <h3>Empatía y Cortesía</h3>
+          <h3>El Ladrón de Problemas</h3>
         </CardHeader>
         <CardBody className="">
           <Row>
             <Col xs="12">
               <h2 className="animated fadeInDown delay-0s">
-                <b>Mejorando tu empatía</b>
+                <b>Voy Ayudar</b>
               </h2>
               <p className="animated fadeInDown delay-1s">
-                Podemos relizar mejoras a nuestra empatia, dale un vistazo al
-                siguiente enlace:
+                Ya son pocos los problemas que te quedan ¿verdad? , pues te voy
+                ayudar a que sean menos. De los problemas que identificaste
+                retira todos aquellos que no tienen una solución, ya que no te
+                es posible intervenir y únicamente toma en tus manos los que se
+                pueden solucionar.
               </p>
-
-              <div className="centrado-fila">
-                <ReactPlayer
-                  className="animated fadeInDown delay-2s mt-4"
-                  url="https://www.youtube.com/watch?v=3DEzlUbkFg8&feature=emb_logo"
-                  controls={true}
-                />
-              </div>
+              <p>
+                Ya son pocos los problemas que te quedan ¿verdad? , pues te voy
+                ayudar a que sean menos. De los problemas que identificaste
+                retira todos aquellos que <b>no tienen una solución</b>, ya que
+                no te es posible intervenir y únicamente toma en tus manos los
+                que <b>se pueden solucionar</b>.{' '}
+              </p>
+              <p>
+                <b>Pues claro ¡el ladrón de problemas!</b>
+              </p>
+              <p>
+                <b>
+                  A veces lo que te ayuda a solucionar un problema, es una
+                  actitud.{' '}
+                </b>
+              </p>
+              <p>
+                Y si necesitas saber como solucionar un problema, acompáñame el
+                el siguiente curso de SOLUCIÓN DE PROBLEMAS.{' '}
+              </p>
             </Col>
-            <Col xs="12" className="  animated fadeInDown">
-              <Row className="centrado-fila mt-4">
-                <Col xs="8">
-                  <Accordion>
-                    <div className="bg-fondo-btn bordeAcordeon boderAcodeonEsquina">
-                      <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                        Paso 1: Practica la escucha activa .
-                      </Accordion.Toggle>
-                    </div>
-
-                    <div className="bg-fondo-btn2 boderAcodeonEsquina">
-                      <Accordion.Collapse eventKey="0">
-                        <Card.Body>
-                          <p style={{ marginBottom: '0px' }}>
-                            Consiste en prestar atención a los detalles para
-                            saber por qué el cliente está molesto y comprender
-                            la magnitud del problema.
-                          </p>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </div>
-
-                    <div className="bg-fondo-btn bordeAcordeon boderAcodeonEsquina">
-                      <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                        Paso 2: Ponte en el lugar del cliente.
-                      </Accordion.Toggle>
-                    </div>
-
-                    <div className="bg-fondo-btn2 boderAcodeonEsquina">
-                      <Accordion.Collapse eventKey="1">
-                        <Card.Body>
-                          <p style={{ marginBottom: '0px' }}>
-                            Consiste en transmitir al cliente que comprende el
-                            problema como si estuvieras sucediendo a ti mismo.
-                          </p>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </div>
-
-                    <div className="bg-fondo-btn bordeAcordeon boderAcodeonEsquina">
-                      <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                        Paso 3: Expresa el deseo sincero de ayudar.
-                      </Accordion.Toggle>
-                    </div>
-
-                    <div className="bg-fondo-btn2 boderAcodeonEsquina">
-                      <Accordion.Collapse eventKey="2">
-                        <Card.Body>
-                          <p style={{ marginBottom: '0px' }}>
-                            Utiliza expresiones sencillas para que el cliente
-                            comprenda que se hace todo lo posible para resolver
-                            el problema.
-                          </p>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </div>
-
-                    <div className="bg-fondo-btn bordeAcordeon boderAcodeonEsquina">
-                      <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                        Paso 4: Mantente cortés y amable.
-                      </Accordion.Toggle>
-                    </div>
-
-                    <div className="bg-fondo-btn2 boderAcodeonEsquina">
-                      <Accordion.Collapse eventKey="3">
-                        <Card.Body>
-                          <p style={{ marginBottom: '0px' }}>
-                            Sin desconocer el enojo del cliente y sus motivos,
-                            para reorientar la conversación y mitigar su mal
-                            humor.
-                          </p>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </div>
-
-                    <div className="bg-fondo-btn bordeAcordeon boderAcodeonEsquina">
-                      <Accordion.Toggle as={Button} variant="link" eventKey="4" className="">
-                      Paso 5: Averigua para que no se preocupe por el cliente.
-                      </Accordion.Toggle>
-                    </div>
-
-                    <div className="bg-fondo-btn2 boderAcodeonEsquina">
-                      <Accordion.Collapse eventKey="4">
-                        <Card.Body>
-                          <p style={{ marginBottom: '0px' }}>
-                            Sin desconocer el enojo del cliente y sus motivos,
-                            para reorientar la conversación y mitigar su mal
-                            humor.
-                          </p>
-                        </Card.Body>
-                      </Accordion.Collapse>
-                    </div>
-                  </Accordion>
-                 
-                </Col>
-                <Col xs="4" className="centrado-fila">
-                  <img
-                    src={cinco}
-                    style={{ width: 350 }}
-                    alt="escucha-activa.jpg"
-                    className="img-fluid   animated fadeInUpBig delay-1s  "
-                  />
-                </Col>
-              </Row>
+            <Col xs="12" className="centrado-fila  animated fadeInDown">
+              <img
+                src={cinco}
+                style={{ width: 350 }}
+                alt="escucha-activa.jpg"
+                className="img-fluid   animated fadeInUpBig delay-1s  "
+              />
             </Col>
           </Row>
         </CardBody>
