@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { CardBody, CardHeader, Col, Row } from 'reactstrap'
-import Objetivo from '../../assets/img/ImgEmpatia/objetivo.png'
+import Objetivo from '../../assets/img/ImgLadron/objetivo.PNG'
 
 
 class ObjetivoView extends Component {
