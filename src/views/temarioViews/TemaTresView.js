@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { CardBody, Col, Row, CardHeader } from 'reactstrap'
-import ReactPlayer from 'react-player'
 import tres from '../../assets/img/ImgEmpatia/tres.png'
 
 class TemaTresView extends Component {
