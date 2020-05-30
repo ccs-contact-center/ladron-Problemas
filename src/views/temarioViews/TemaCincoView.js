@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { CardBody, CardHeader, Col, Row } from 'reactstrap'
 import cinco from '../../assets/img/ImgEmpatia/cinco.jpg'
-import { Card, Button } from 'react-bootstrap'
 
-import Accordion from 'react-bootstrap/Accordion'
 
 class TemaCincoView extends Component {
   loading = () => (
