@@ -150,7 +150,7 @@ class TemaCuatroView extends Component {
                     src={consejos01}
                     style={{ width: 350 }}
                     alt="escucha-activa.jpg"
-                    className="img-fluid bordeImagen  animated fadeInUpBig delay-2s  "
+                    className="img-fluid   animated fadeInUpBig delay-2s  "
                   />
                 </Col>
                 <Col xs="12">
