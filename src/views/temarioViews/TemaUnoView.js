@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { CardBody, CardHeader, Col, Row } from 'reactstrap'
-import Objetivo from '../../assets/img/ImgEmpatia/objetivo.png'
+import dos from '../../assets/img/ImgEmpatia/dos.png'
 
 class TemaUnoView extends Component {
   loading = () => (
@@ -30,7 +30,7 @@ class TemaUnoView extends Component {
             </Col>
             <Col xs="12" sm="12" className="centrado-fila">
               <img
-                src={Objetivo}
+                src={dos}
                 style={{ width: 160 }}
                 alt="Objetivo"
                 className="img-fluid  animated  fadeInDown  delay-1s"
