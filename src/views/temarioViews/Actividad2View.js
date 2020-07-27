@@ -10,7 +10,9 @@ import {
   Label,
   Input,
 } from 'reactstrap'
-import SweetAlert from 'sweetalert2-react'
+import AuthService from "../../services/AuthService";
+import API_CCS from '../../services/API_CCS'
+const API = new API_CCS()
 
 class ActividadView extends Component {
   loading = () => (
@@ -19,30 +21,43 @@ class ActividadView extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { value: '' }
+    this.Auth = new AuthService();
+    this.state = {
+      radio1:"",
+      radio2:"",
+      radio3:"",
+      radio4:"",
+      radio5:"",
+      id_ccs: this.Auth.getProfile().id_ccs,
+      form: "LadronDeProblemas",
+     }
 
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value })
+  onChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
   }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value)
-    event.preventDefault()
+  async onSave(e) {
+    try {
+      var respuesta = await API.guardaActividad(this.state)
+      alert('Se guardo la actividad, con id: ' + respuesta[0].id)
+
+    } catch (err) {
+      console.log('loggea si hay un error')
+    }
   }
+
+
+
+  
 
   render() {
     return (
       <div className="animated fadeIn">
-        <SweetAlert
-          show={this.state.show}
-          title="Enviado"
-          text="Respuestas enviadas...."
-          onConfirm={() => this.setState({ show: false })}
-        />
+       
         <Row>
           <Col>
             <CardHeader className="">
@@ -59,15 +74,15 @@ class ActividadView extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio1" />
+                        <Input type="radio" name="radio1" value="a" onChange={this.onChange.bind(this)} />
                         <Label check>(a) En un familiar .</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio2" />
+                        <Input type="radio" name="radio1" value="b" onChange={this.onChange.bind(this)} />
                         <Label check>(b) En nosotros mismos. </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio3" />
+                        <Input type="radio" name="radio1" value="c" onChange={this.onChange.bind(this)} />
                         <Label check>(c) En algún amigo.</Label>
                       </FormGroup>
                     </Col>
@@ -88,11 +103,11 @@ class ActividadView extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio4" />
+                        <Input type="radio" name="radio2" value="a" onChange={this.onChange.bind(this)} />
                         <Label check>(a) Si.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio5" />
+                        <Input type="radio" name="radio2" value="b" onChange={this.onChange.bind(this)} />
                         <Label check>(b) No.</Label>
                       </FormGroup>
                     </Col>
@@ -113,19 +128,19 @@ class ActividadView extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio4" />
+                        <Input type="radio" name="radio3" value="a" onChange={this.onChange.bind(this)} />
                         <Label check>
                           (a) Resolver en cualquier otro momento.{' '}
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio5" />
+                        <Input type="radio" name="radio3" value="b" onChange={this.onChange.bind(this)} />
                         <Label check>
                           (b) Resolver lo más pronto posible.{' '}
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio6" />
+                        <Input type="radio" name="radio3" value="c" onChange={this.onChange.bind(this)} />
                         <Label check>(c) No resolverlo.</Label>
                       </FormGroup>
                     </Col>
@@ -147,17 +162,17 @@ class ActividadView extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio4" />
+                        <Input type="radio" name="radio4" value="a"  onChange={this.onChange.bind(this)} />
                         <Label check>
                           (a) Los que provoca la propia persona.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio5" />
+                        <Input type="radio" name="radio4" value="b" onChange={this.onChange.bind(this)} />
                         <Label check>(b) Los no urgentes.</Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio6" />
+                        <Input type="radio" name="radio4" value="c" onChange={this.onChange.bind(this)} />
                         <Label check>(c) Los que son por causa externa.</Label>
                       </FormGroup>
                     </Col>
@@ -175,19 +190,19 @@ class ActividadView extends Component {
                     </legend>
                     <Col sm={12}>
                       <FormGroup check>
-                        <Input type="radio" name="radio4" />
+                        <Input type="radio" name="radio5"  value="a"  onChange={this.onChange.bind(this)} />
                         <Label check>
                           (a) Ayudarnos a desaparecer problemas.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio5" />
+                        <Input type="radio" name="radio5" value="b" onChange={this.onChange.bind(this)} />
                         <Label check>
                           (b) Ayudarnos a priorizar problemas.
                         </Label>
                       </FormGroup>
                       <FormGroup check>
-                        <Input type="radio" name="radio6" />
+                        <Input type="radio" name="radio5" value="c"  onChange={this.onChange.bind(this)} />
                         <Label check>
                           (c) Ayudarnos a tener mas problemas.
                         </Label>
@@ -202,7 +217,7 @@ class ActividadView extends Component {
                   <Col className="centrado-fila">
                     <Button
                       color="primary"
-                      onClick={() => this.setState({ show: true })}
+                      onClick={this.onSave.bind(this)}
                     >
                       Enviar
                     </Button>
