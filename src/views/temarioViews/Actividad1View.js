@@ -10,12 +10,35 @@ import {
 
   Input,
 } from 'reactstrap'
+import  AuthService from "../../services/AuthService";
+import API_CCS from "../../servives/API_CCS";
+const API = new API_CCS();
 //import SweetAlert from 'sweetalert2-react'
 
 class Actividad1View extends Component {
   loading = () => (
     <div className="animated fadeIn pt-1 text-center">Cargando...</div>
   )
+
+  constructor(state){
+    super(state)
+    this.Auth = new AuthService();
+    this.state = {
+      pregunta1: "",     
+      pregunta2: "",     
+      pregunta3: "",     
+      pregunta4: "",     
+      pregunta5: "",     
+      pregunta6: "",     
+      pregunta7: "",     
+      pregunta8: "",     
+      pregunta9: "",     
+      pregunta10: "", 
+      id_ccs: this.Auth.getProfile().id_ccs,
+      form: "ladronProblemas-1",  
+
+    }
+  }
 
   render() {
     return (
