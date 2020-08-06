@@ -29,7 +29,7 @@ class ActividadView extends Component {
       radio4:"",
       radio5:"",
       id_ccs: this.Auth.getProfile().id_ccs,
-      form: "LadronDeProblemas",
+      form: "LadronDeProblemas-1",
      }
 
   }
@@ -43,7 +43,7 @@ class ActividadView extends Component {
   async onSave(e) {
     try {
       var respuesta = await API.guardaActividad(this.state)
-      alert('Se guardo la actividad, con id: ' + respuesta[0].id)
+      alert('Se guardo la actividad: 1, con id: ' + respuesta[0].id)
 
     } catch (err) {
       console.log('loggea si hay un error')
@@ -69,7 +69,7 @@ class ActividadView extends Component {
                 <div className="cajaA2" style={{ backgroundColor: '#d5d4d8' }}>
                   <FormGroup tag="fieldset" row>
                     <legend className="col-form-label ml-2">
-                      <b>1. ¿Qué es etiqueta telefónica?</b>{' '}
+                      <b>1.	¿Dónde podemos encontrar al ladrón de problemas?</b>{' '}
                       <span style={{ color: 'red' }}>*</span>
                     </legend>
                     <Col sm={12}>
