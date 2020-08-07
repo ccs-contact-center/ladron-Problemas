@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { CardBody, CardHeader, Row, Col } from 'reactstrap'
-import 'animate.css'
+import animated from 'animate.css'
 import logo from '../../assets/img/brand/logo.png'
 import bienvenida from '../../assets/img/ImgLadron/bienvenida.PNG'
 
@@ -41,6 +41,7 @@ class BienvenidaView extends Component {
             </Col>
           </Row>
         </CardBody>
+        <animated/>
       </div>
     )
   }
